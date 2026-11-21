@@ -6,6 +6,11 @@ name: ks-hook
 description: "快手文案钩子语料库（只读）：关键词搜视频、博主作品与粉丝数据、视频评论，输出 JSON，不登录不发布。触发词：快手、Kuaishou、kwai、快手搜索、快手评论、快手博主。用户要查快手视频、评论、爆款选题、竞品监控、KOL 筛选或评论舆情时使用；抖音、小红书、B站、微博、公众号不要用本技能。"
 license: MIT
 version: 1.1.3
+display_name: "快手文案钩子｜爆款标题·开头3秒·口播脚本·语料复用"
+display_name_en: "Kuaishou Hook"
+description_zh: "快手文案钩子语料库（只读，不登录你的快手账号，不发布不点赞不评论，无风控封号风险）：把公开视频的标题文案、评论区高赞话术、博主历史作品批量取回，统一输出结构化 JSON，可直接交给 AI 做标题模板复用、开头 3 秒钩子拆解、口播脚本改写与语料库沉淀。\n\n三类取数能力：①关键词搜视频，支持综合/最新发布/最多点赞排序与近 1 日/7 日/1 月时间范围；②博主作品抓取，按最新或最热排序，加 --limit 0 只取博主资料与粉丝、获赞等互动数据，用来算真实互动率；③单条视频评论抓取，归集高赞话术与用户原话做痛点挖掘。\n\n钩子打法：用最多点赞排序找高赞开头，从评论捞用户原话与痛点，用「最新发布 + 近 1 日」定当日选题。\n\n规模：按量 Token 单次最多 10000 条；包月搜索 ≤30、作品 ≤50、评论 ≤60，超限返回 PLAN_LIMIT（退出码 1），不要当网络错误同参重试。仅需 Node.js 16.14+ 与 GUAIKEI_API_TOKEN，零第三方依赖，国内直连。"
+description_en: "Read-only Kuaishou copywriting-hook corpus, no login, no ban risk. Pull public captions, top-comment phrasing and creator post history in bulk as structured JSON, so AI can reuse title templates, deconstruct the first-3-second hook and rewrite spoken scripts.\n\nThree capabilities: 1) Keyword search over videos, sorted by relevance, newest or most liked, with 1-day, 7-day and 1-month windows. 2) Creator post listing sorted by newest or hottest, plus a profile-only mode (--limit 0) returning follower and like counts for real engagement math. 3) Comment scraping on one video to harvest high-like phrasing and user pain points.\n\nHook playbook: sort by most liked for strong openings, mine comments for original wording, use newest plus a 1-day window to pick daily topics.\n\nScale: pay-as-you-go up to 10,000 items per call; monthly caps search 30, posts 50, comments 60, then PLAN_LIMIT (exit 1) - not a network error, do not retry. Needs Node.js 16.14+ and GUAIKEI_API_TOKEN, zero deps."
+author: "新郑市怪奇信息技术工作室"
 metadata:
   openclaw:
     emoji: "📷"
